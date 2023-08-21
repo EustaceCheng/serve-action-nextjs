@@ -1,10 +1,7 @@
 "use client";
 
 import { addProductToDatabase } from "@/actions/serverActions";
-import {
-  useTransition,
-  experimental_useOptimistic as useOptimistic,
-} from "react";
+import { experimental_useOptimistic as useOptimistic } from "react";
 
 import { Product } from "../../typings";
 import ProductList from "./ProductList";
