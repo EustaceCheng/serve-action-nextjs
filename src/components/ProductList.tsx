@@ -1,13 +1,14 @@
+"use client";
 import React from "react";
 import { Product } from "../../typings";
+import clsx from "clsx";
 
 function ProductList({ products }: { products: Product[] }) {
   return (
     <>
-      <h2 className="font-bold p-5">List of Products</h2>
       <div className="flex flex-wrap gap-5">
-        {products.map(({ id, product, price }) => (
-          <div key={id} className="p-5 shadow">
+        {products.map(({ id, product, price, sending }) => (
+          <div key={id} className={clsx("p-5 shadow", sending && "opacity-50")}>
             <p>{product}</p>
             <p>${price}</p>
           </div>

@@ -13,9 +13,13 @@ export default function AddProductButton() {
   return (
     <button
       className="fixed bottom-10 right-10 border bg-green-500 text-white p-2 rounded-md w48"
-      onClick={() => startTransition(() => addProductToDatabase(formData))}
+      onClick={() =>
+        startTransition(() => {
+          addProductToDatabase(formData);
+        })
+      }
     >
-      {isPending ? "Adding..." : "Add Iphone"}
+      {isPending ? "Adding..." : "Add Iphone (useTransition)"}
     </button>
   );
 }
